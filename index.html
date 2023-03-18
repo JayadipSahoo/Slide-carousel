@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+   
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script type="text/javascript" >
+        $( document ).ready(function() {
+  
+            let slider = $('.slider .items');
+            let items = $('.slider .items .item .child')
+            const leftButton = $('#left')
+            const rightButton = $('#right')
+            
+            let scrollPos = 0
+            if (scrollPos >= 0) leftButton.hide()
+            
+            leftButton.click(function() {
+              scrollPos += slider.width();
+              if (scrollPos >= 0) {
+                leftButton.hide()
+                scrollPos = 0
+              }
+              rightButton.show()
+              slider.css('transform', "translate3d(" + scrollPos + "px, 0px, 0px)")
+            });
+          
+            rightButton.click((e) => {
+              scrollPos -= slider.width();
+              if (scrollPos <= -(items.innerHeight() - 2) * 15) rightButton.hide()
+              leftButton.show()
+              slider.css('transform', "translate3d(" + scrollPos + "px, 0px, 0px)")
+            });
+          
+          });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>A Simple Carousal Slider</h1>
+        <div class="container">
+          <div class="slider">
+            <div class="items" style="transform: translate3d(0px, 0px, 0px); transition: transform 400ms ease 0s">
+              <div class="item">
+                <div class="child">1</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">2</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">3</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">4</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">5</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">6</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">7</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">8</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">9</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">10</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">11</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">12</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">13</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">14</div>
+                <div class="footer"></div>
+              </div>
+              <div class="item">
+                <div class="child">15</div>
+                <div class="footer"></div>
+              </div>
+            </div>
+            <div class="buttons">
+              <div id="left">⇠</div>
+              <div id="right">⇢</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="script.js"></script>
+ 
+
+</body>
+</html>
